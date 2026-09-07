@@ -3,167 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus | Consultoria de Performance Digital</title>
+    <title>Koji Pesca e Cia | Especialistas em Pesca Esportiva</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gradient-text { background: linear-gradient(135deg, #fff 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-primary { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -10px #6366f1; }
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, .nav-link { font-family: 'Montserrat', sans-serif; }
+        .bg-ocean-deep { background-color: #0a2e4a; }
+        .text-water { color: #38bdf8; }
+        .bg-water { background-color: #38bdf8; }
+        .border-water { border-color: #38bdf8; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-[#0a0a0c] text-slate-300 selection:bg-indigo-500 selection:text-white">
+<body class="bg-slate-50 text-slate-900">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
-                    <i data-lucide="zap" class="text-white w-5 h-5"></i>
+    <nav class="fixed w-full z-50 bg-ocean-deep text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="bg-water p-2 rounded-full">
+                        <i data-lucide="anchor" class="text-ocean-deep w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight uppercase">Koji <span class="text-water">Pesca e Cia</span></span>
                 </div>
-                <span class="text-white font-bold text-xl tracking-tight">NEXUS</span>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="nav-link hover:text-water transition-colors font-medium">Início</a>
+                    <a href="#produtos" class="nav-link hover:text-water transition-colors font-medium">Equipamentos</a>
+                    <a href="#sobre" class="nav-link hover:text-water transition-colors font-medium">A Loja</a>
+                    <a href="#contato" class="bg-water text-ocean-deep px-5 py-2 rounded-full font-bold hover:bg-sky-300 transition-all">Falar com Especialista</a>
+                </div>
+
+                <button class="md:hidden p-2" onclick="toggleMenu()">
+                    <i data-lucide="menu" id="menu-icon"></i>
+                </button>
             </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#beneficios" class="hover:text-white transition-colors">Benefícios</a>
-                <a href="#metodologia" class="hover:text-white transition-colors">Metodologia</a>
-                <a href="#contato" class="bg-white text-black px-5 py-2 rounded-full hover:bg-indigo-50 transition-all font-semibold">Começar Agora</a>
-            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-ocean-deep border-t border-slate-700 px-4 py-6 space-y-4">
+            <a href="#home" class="block nav-link text-lg py-2" onclick="toggleMenu()">Início</a>
+            <a href="#produtos" class="block nav-link text-lg py-2" onclick="toggleMenu()">Equipamentos</a>
+            <a href="#sobre" class="block nav-link text-lg py-2" onclick="toggleMenu()">A Loja</a>
+            <a href="#contato" class="block bg-water text-ocean-deep text-center py-3 rounded-lg font-bold" onclick="toggleMenu()">Contato</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 px-6 overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
-            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/20 blur-[120px] rounded-full"></div>
-            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full"></div>
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.pexels.com/photos/1450361/pexels-photo-1450361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+                 alt="Pescador em lago" 
+                 class="w-full h-full object-cover brightness-75">
         </div>
-
-        <div class="max-w-5xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs font-semibold text-indigo-400 mb-6">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-                </span>
-                Vagas abertas para consultoria Q4
-            </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 gradient-text">
-                Escalamos sua operação <br> com precisão cirúrgica.
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <span class="inline-block px-4 py-1 rounded-full bg-water/20 text-water border border-water/30 text-sm font-semibold mb-6 uppercase tracking-widest">Referência em Osasco, SP</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+                Equipamentos de Elite <br><span class="text-water">Para Grandes Fisgadas</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Pare de queimar orçamento com tráfego sem conversão. Implementamos a infraestrutura de growth que transforma cliques em receita previsível.
+            <p class="text-slate-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                Tudo o que o pescador precisa, do iniciante ao profissional. Iscas, varas, molinetes e acessórios selecionados para garantir o seu troféu.
             </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#contato" class="btn-primary w-full sm:w-auto bg-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2">
-                    Agendar Diagnóstico Grátis
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#produtos" class="bg-water text-ocean-deep px-8 py-4 rounded-lg font-bold text-lg hover:scale-105 transition-transform flex items-center justify-center gap-2">
+                    Explorar Loja <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                 </a>
-                <a href="#beneficios" class="w-full sm:w-auto glass text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">
-                    Ver Metodologia
+                <a href="#contato" class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition-all">
+                    Localização
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section id="beneficios" class="py-24 px-6">
+    <!-- Products Section -->
+    <section id="produtos" class="py-24 px-4 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Por que a Nexus?</h2>
-                <p class="text-slate-400 max-w-xl mx-auto">Não entregamos relatórios de vaidade. Entregamos lucro líquido e escala sustentável.</p>
+                <h2 class="text-4xl font-bold text-ocean-deep mb-4">O Melhor do Mundo da Pesca</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Trabalhamos com as marcas mais renomadas para garantir que você não perca nenhum peixe.</p>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass p-8 rounded-3xl hover:border-indigo-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-indigo-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="trending-up" class="text-indigo-500 w-6 h-6"></i>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group bg-slate-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-200">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/235953/pexels-photo-235953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+                             alt="Varas de pesca" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Crescimento Acelerado</h3>
-                    <p class="text-slate-400 leading-relaxed">Otimização de funis de venda para reduzir o CAC e aumentar o LTV do seu cliente final.</p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ocean-deep mb-2">Varas e Molinetes</h3>
+                        <p class="text-slate-500 mb-4">Equipamentos de alta precisão e resistência para diversos tipos de pesca.</p>
+                        <div class="flex items-center text-water font-bold gap-2 cursor-pointer hover:underline">
+<div class="flex items-center text-water font-bold gap-2 cursor-pointer hover:underline product-detail-btn" data-title="Varas e Molinetes" data-desc="Equipamentos de alta precisão e resistência para diversos tipos de pesca, incluindo varas de carbono e molinetes de alta performance para água doce e salgada.">
+                            Ver Detalhes <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="glass p-8 rounded-3xl hover:border-indigo-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="target" class="text-blue-500 w-6 h-6"></i>
+                <div class="group bg-slate-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-200">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/208736/pexels-photo-208736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+                             alt="Iscas artificiais" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Segmentação Hiper-Focada</h3>
-                    <p class="text-slate-400 leading-relaxed">Encontramos o seu cliente ideal através de análise de dados, eliminando desperdícios de verba.</p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ocean-deep mb-2">Iscas e Acessórios</h3>
+                        <p class="text-slate-500 mb-4">Ampla variedade de iscas artificiais, anzóis e linhas de alta performance.</p>
+                        <div class="flex items-center text-water font-bold gap-2 cursor-pointer hover:underline">
+<div class="flex items-center text-water font-bold gap-2 cursor-pointer hover:underline product-detail-btn" data-title="Iscas e Acessórios" data-desc="Ampla variedade de iscas artificiais, anzóis e linhas de alta performance. Temos as melhores opções de jigs, plugs e linhas multifilamento do mercado.">
+                            Ver Detalhes <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="glass p-8 rounded-3xl hover:border-indigo-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-purple-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="bar-chart-3" class="text-purple-500 w-6 h-6"></i>
+                <div class="group bg-slate-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-200">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/15322230/pexels-photo-15322230.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+                             alt="Roupas de pesca" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Análise em Tempo Real</h3>
-                    <p class="text-slate-400 leading-relaxed">Dashboards personalizados que mostram exatamente de onde vem cada centavo do seu lucro.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA / Lead Capture Section -->
-    <section id="contato" class="py-24 px-6">
-        <div class="max-w-5xl mx-auto">
-            <div class="glass rounded-[3rem] overflow-hidden relative">
-                <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-indigo-600/20 to-transparent hidden lg:block"></div>
-                
-                <div class="grid lg:grid-cols-2">
-                    <div class="p-8 md:p-16">
-                        <h2 class="text-4xl font-bold text-white mb-6 leading-tight">Pronto para mudar o patamar do seu negócio?</h2>
-                        <p class="text-slate-400 mb-8 text-lg">
-                            Preencha o formulário e nossa equipe analisará seu modelo de negócio para agendar uma call de diagnóstico gratuita.
-                        </p>
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-center gap-3 text-slate-300">
-                                <i data-lucide="check-circle-2" class="text-indigo-500 w-5 h-5"></i>
-                                Análise de Funil Atual
-                            </li>
-                            <li class="flex items-center gap-3 text-slate-300">
-                                <i data-lucide="check-circle-2" class="text-indigo-500 w-5 h-5"></i>
-                                Identificação de Gargalos
-                            </li>
-                            <li class="flex items-center gap-3 text-slate-300">
-                                <i data-lucide="check-circle-2" class="text-indigo-500 w-5 h-5"></i>
-                                Plano de Ação Imediato
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="p-8 md:p-16 bg-white/5">
-                        <form id="leadForm" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-medium text-slate-400 mb-2">Nome Completo</label>
-                                <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-all" placeholder="Ex: João Silva">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-400 mb-2">E-mail Corporativo</label>
-                                <input type="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-all" placeholder="joao@empresa.com">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-400 mb-2">Faturamento Mensal</label>
-                                <select class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-slate-400 focus:outline-none focus:border-indigo-500 transition-all">
-                                    <option value="1">Até R$ 10k</option>
-                                    <option value="2">R$ 10k a R$ 50k</option>
-                                    <option value="3">R$ 50k a R$ 200k</option>
-                                    <option value="4">Acima de R$ 200k</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-4 rounded-xl hover:bg-indigo-500 transition-all flex items-center justify-center gap-2 mt-6">
-                                Solicitar Diagnóstico
-                                <i data-lucide="send" class="w-5 h-5"></i>
-                            </button>
-                        </form>
-                        <div id="successMsg" class="hidden text-center py-12">
-                            <div class="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i data-lucide="check" class="w-8 h-8"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-2">Solicitação Enviada!</h3>
-                            <p class="text-slate-400">Entraremos em contato em até 24 horas úteis.</p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ocean-deep mb-2">Vestuário Técnico</h3>
+                        <p class="text-slate-500 mb-4">Roupas com proteção UV e acessórios para máximo conforto durante a pescaria.</p>
+                        <div class="flex items-center text-water font-bold gap-2 cursor-pointer hover:underline">
+<div class="flex items-center text-water font-bold gap-2 cursor-pointer hover:underline product-detail-btn" data-title="Vestuário Técnico" data-desc="Roupas com proteção UV, botas impermeáveis e chapéus especializados para garantir o máximo conforto e proteção durante longas jornadas de pescaria.">
+                            Ver Detalhes <i data-lucide="chevron-right" class="w-4 h-4"></i>
                         </div>
                     </div>
                 </div>
@@ -171,50 +131,242 @@
         </div>
     </section>
 
-    <footer class="py-12 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <div class="w-6 h-6 bg-indigo-600 rounded flex items-center justify-center">
-                    <i data-lucide="zap" class="text-white w-3 h-3"></i>
+    <!-- About Section -->
+    <section id="sobre" class="py-24 px-4 bg-slate-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+                         alt="Loja de pesca" 
+                         class="rounded-2xl shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-ocean-deep text-water p-8 rounded-2xl hidden lg:block">
+                        <p class="text-4xl font-bold">Koji</p>
+                        <p class="text-sm uppercase font-medium text-slate-400">Paixão por Pescar</p>
+                    </div>
                 </div>
-                <span class="text-white font-bold tracking-tight">NEXUS</span>
+                <div>
+                    <h2 class="text-4xl font-bold text-ocean-deep mb-6">Sua Parceria de <span class="text-water">Confiança</span> em Osasco</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        A <strong>Koji Pesca e Cia LTDA</strong> é mais do que uma loja de equipamentos; somos um ponto de encontro para apaixonados pela pesca esportiva. Localizados no coração de Osasco, oferecemos curadoria técnica para que você escolha a ferramenta certa para cada espécie.
+                    </p>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">
+                        Seja para a pesca de barranco, lago ou mar, nossa equipe está preparada para orientar desde quem está dando a primeira cast até o pescador profissional que busca o equipamento de ponta.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check" class="text-water w-6 h-6"></i>
+                            <span class="font-semibold text-ocean-deep">Consultoria Técnica Especializada</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check" class="text-water w-6 h-6"></i>
+                            <span class="font-semibold text-ocean-deep">Produtos de Marcas Premium</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check" class="text-water w-6 h-6"></i>
+                            <span class="font-semibold text-ocean-deep">Atendimento Personalizado</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="text-slate-500 text-sm">© 2026 Nexus Performance. Todos os direitos reservados.</p>
-            <div class="flex gap-6">
-                <a href="#" class="text-slate-500 hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                <a href="#" class="text-slate-500 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 px-4 bg-ocean-deep text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">Visite Nossa <span class="text-water">Loja Física</span></h2>
+                    <p class="text-slate-400 text-lg mb-10">
+                        Venha conferir nossos equipamentos de perto e tirar suas dúvidas com quem entende de pesca.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-water/20 p-3 rounded-full text-water">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <span class="text-lg">Rua Paulo Licio Rizzo, 183 - Centro, Osasco SP</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="bg-water/20 p-3 rounded-full text-water">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <span class="text-lg">contato@kojipesca.com.br</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="bg-water/20 p-3 rounded-full text-water">
+                                <i data-lucide="clock"></i>
+                            </div>
+                            <span class="text-lg">Segunda a Sábado: 09h às 18h</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl text-slate-900 shadow-2xl">
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Mensagem enviada! A equipe da Koji Pesca entrará em contato.');">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold mb-1">Nome</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-water outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-1">WhatsApp</label>
+                                <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-water outline-none transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">O que você procura?</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-water outline-none transition-all">
+                                <option>Varas e Molinetes</option>
+                                <option>Iscas e Linhas</option>
+                                <option>Vestuário</option>
+                                <option>Outros Acessórios</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-1">Mensagem</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-water outline-none transition-all"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-ocean-deep text-white py-4 rounded-lg font-bold hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
+                            Enviar Solicitação <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-16 px-4 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="bg-water p-1 rounded text-ocean-deep">
+                            <i data-lucide="anchor" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white uppercase">Koji <span class="text-water">Pesca e Cia</span></span>
+                    </div>
+                    <p class="max-w-sm mb-6">
+                        Sua loja de confiança em Osasco para tudo relacionado ao mundo da pesca esportiva. Qualidade, variedade e atendimento técnico.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="hover:text-water transition-colors"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="hover:text-water transition-colors"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="hover:text-water transition-colors"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Navegação</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="hover:text-water transition-colors">Início</a></li>
+                        <li><a href="#produtos" class="hover:text-water transition-colors">Equipamentos</a></li>
+                        <li><a href="#sobre" class="hover:text-water transition-colors">A Loja</a></li>
+                        <li><a href="#contato" class="hover:text-water transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#privacidade" onclick="openPrivacy()" class="hover:text-water transition-colors">Política de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-water transition-colors">Termos de Uso</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+                <p>&copy; 2026 Koji Pesca e Cia LTDA. Todos os direitos reservados.</p>
+<p class="font-medium text-slate-300">Osasco, SP | CEP 06018-010 | CNPJ: 53.642.835/0001-01</p>
             </div>
         </div>
     </footer>
 
+    <!-- Privacy Modal -->
+    <!-- Privacy Modal -->
+    <div id="privacy-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[80vh]">
+            <div class="p-6 border-b flex justify-between items-center bg-slate-50">
+                <h3 class="text-xl font-bold text-ocean-deep">Política de Privacidade</h3>
+                <button onclick="closePrivacy()" class="p-2 hover:bg-slate-200 rounded-full transition-colors">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="p-8 overflow-y-auto text-slate-600 leading-relaxed space-y-4">
+                <p>A <strong>Koji Pesca e Cia LTDA</strong> preza pela transparência e segurança dos dados de seus clientes.</p>
+                <h4 class="font-bold text-ocean-deep">1. Coleta de Dados</h4>
+                <p>Coletamos apenas dados essenciais (nome, contato e interesse) através de nossos formulários para fins de orçamento e atendimento.</p>
+                <h4 class="font-bold text-ocean-deep">2. Finalidade</h4>
+                <p>As informações são utilizadas exclusivamente para a comunicação direta entre a loja e o cliente, visando a melhor experiência de compra.</p>
+                <h4 class="font-bold text-ocean-deep">3. Armazenamento</h4>
+                <p>Seus dados são armazenados de forma segura e não são compartilhados com terceiros para fins comerciais.</p>
+            </div>
+            <div class="p-6 border-t bg-slate-50 text-right">
+                <button onclick="closePrivacy()" class="bg-ocean-deep text-white px-6 py-2 rounded-lg font-bold hover:bg-slate-800 transition-all">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+            <div class="p-6 border-b flex justify-between items-center bg-slate-50">
+                <h3 id="modal-product-title" class="text-xl font-bold text-ocean-deep">Detalhes do Produto</h3>
+                <button onclick="closeProductModal()" class="p-2 hover:bg-slate-200 rounded-full transition-colors">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="p-8 text-slate-600 leading-relaxed">
+                <p id="modal-product-desc" class="text-lg mb-6"></p>
+                <div class="bg-slate-100 p-4 rounded-lg border-l-4 border-water">
+                    <p class="text-sm font-medium text-slate-500 uppercase mb-2">Dica do Especialista</p>
+                    <p class="text-slate-700">Consulte nossa equipe em Osasco para ajustar a configuração ideal para o peixe que você deseja capturar!</p>
+                </div>
+            </div>
+            <div class="p-6 border-t bg-slate-50 text-right">
+                <button onclick="closeProductModal()" class="bg-ocean-deep text-white px-6 py-2 rounded-lg font-bold hover:bg-slate-800 transition-all">Entendi</button>
+            </div>
+        </div>
+    </div>
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Form Handling
-        const form = document.getElementById('leadForm');
-        const successMsg = document.getElementById('successMsg');
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Simulate API Call
-            form.classList.add('opacity-50', 'pointer-events-none');
-            
-            setTimeout(() => {
-                form.classList.add('hidden');
-                successMsg.classList.remove('hidden');
-            }, 1200);
+        function openPrivacy() {
+            document.getElementById('privacy-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePrivacy() {
+            document.getElementById('privacy-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openProductModal(title, desc) {
+            document.getElementById('modal-product-title').innerText = title;
+            document.getElementById('modal-product-desc').innerText = desc;
+            document.getElementById('product-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProductModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.querySelectorAll('.product-detail-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                openProductModal(btn.dataset.title, btn.dataset.desc);
+            });
         });
 
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closePrivacy();
+                closeProductModal();
+            }
         });
     </script>
 </body>
